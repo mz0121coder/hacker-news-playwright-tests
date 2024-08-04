@@ -43,7 +43,7 @@ test('assert time links are sorted from newest to oldest', async ({ page }) => {
 		);
 
 		// Click the 'More' link if available and if we haven't reached 100 yet
-		const moreLink = await page.getByRole('link', { name: 'More' }).first();
+		const moreLink = await page.getByRole('link', { name: 'More' }).last();
 		if (moreLink && timesInMinutes.length < 100) {
 			await expect(moreLink).toBeVisible(); // Ensure it's visible
 			await moreLink.click();
