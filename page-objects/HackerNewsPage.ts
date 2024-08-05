@@ -13,13 +13,18 @@ export class HackerNewsPage {
 	}
 
 	async handleErrorMessage() {
-		const errorMessageLocator = this.page.getByText(
-			"Sorry, we're not able to serve your requests this quickly."
-		);
-		const isVisible = await errorMessageLocator.isVisible();
-		if (isVisible) {
-			await this.page.getByRole('link', { name: 'reload' }).click();
-			await this.page.waitForLoadState('domcontentloaded');
+		// limit iterations to prevent performance issues from too many reloads
+		for (let i = 0; i < 10; i++) {
+			const errorMessageLocator = this.page.getByText(
+				"Sorry, we're not able to serve your requests this quickly."
+			);
+			const isVisible = await errorMessageLocator.isVisible();
+			if (isVisible) {
+				await this.page.getByRole('link', { name: 'reload' }).click();
+				await this.page.waitForLoadState('domcontentloaded');
+			} else {
+				break;
+			}
 		}
 	}
 
