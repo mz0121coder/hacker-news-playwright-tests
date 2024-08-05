@@ -1,0 +1,18 @@
+# Pull latest image and run the container
+
+# docker pull mzcoder7/hacker-news-playwright-tests:latest
+# docker-compose up
+
+version: '3.8'
+services:
+  hacker-news-playwright-tests:
+    image: mzcoder7/hacker-news-playwright-tests:latest
+    # build context no longer needed
+    # build:
+    #   context: .
+    #   dockerfile: ./Dockerfile
+
+    command: npx playwright test
+    volumes:
+      - ./playwright-report/:/app/playwright-report
+      - ./test-results/:/app/test-results
