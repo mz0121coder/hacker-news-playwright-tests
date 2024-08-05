@@ -1,7 +1,6 @@
-# RECOMMENDED - pull latest image from docker hub
-# use the commands in docker-compose.yaml file
+# This file can now be ignored
 
-# this command will build the image from scratch
+# this command will build a new image
 # docker build -t hacker-news-playwright-tests .
 
 FROM mcr.microsoft.com/playwright:v1.45.3-jammy

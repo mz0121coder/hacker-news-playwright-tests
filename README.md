@@ -28,10 +28,13 @@ The project is containerised using Docker, making it easy to set up and run the 
 
 ### Instructions
 
-I have created custom scripts to make it easier to work with this project.
-After downloading or cloning the repository, there are 3 simple ways you can run the tests:
+I have created custom scripts to make the framework easy to use.
+
+Download or clone this repository, then there are 3 simple ways you can run the tests.
 
 #### Option 1 - Docker container (headless mode):
+
+For this option, make sure [Docker Desktop](https://www.docker.com/products/docker-desktop/) is installed and running on your machine.
 
 1. Pull the image from Docker Hub:
    `docker pull mzcoder7/hacker-news-playwright-tests`
@@ -39,7 +42,7 @@ After downloading or cloning the repository, there are 3 simple ways you can run
    `docker-compose up`
 3. You will see a command in the terminal (after the run) that you can execute to view the latest report in the browser, or it will open automatically
 
-![Docker run](/images/Docker-run.png)
+![Docker run](/assets/Docker-run.png)
 
 #### Option 2 - Playwright (headed mode)
 
@@ -47,7 +50,7 @@ After downloading or cloning the repository, there are 3 simple ways you can run
 2. Run `npm run test` to execute tests
 3. You will see a similar command to option 1, or the report will open automatically.
 
-![Playwright demo](/images/Playwright-demo.gif)
+![Playwright demo](/assets/Playwright-demo.gif)
 
 #### Option 3 - Playwright UI (useful for debugging)
 
@@ -55,7 +58,7 @@ After downloading or cloning the repository, there are 3 simple ways you can run
 2. Run `npm run ui` to open the Playwright UI
 3. From here you can experiment with the tests and try different browsers, devices, pause, rewind etc. This is a great tool for debugging/troubleshooting.
 
-![UI demo](/images/Playwright-UI.png)
+![UI demo](/assets/Playwright-UI.png)
 
 ---
 
@@ -70,12 +73,12 @@ Focussing on separation of concerns, I created a page object for the newest arti
 
 I found a common issue across certain devices (especially Android) where the requests for more articles seemed to overload Hacker News and/or were made too quickly:
 
-![Error message](/images/Error-message.png)
+![Error message](/assets/Error-message.png)
 
 To troubleshoot this, I added dynamic waits where possible, and used a helper method for locating the error message & reloading.
 
-![Error handling](/images/Error-handling.png)
+![Error handling](/assets/Error-handling.png)
 
 While this generally worked with 1 or 2 reloads, I would like to test this further on Android devices and other browsers before pushing more test cases to this repo.
 
-As this framework grows, I can also extract common behaviour across the chrome, firefox and iphone specs (as well as other environments) into separate classes or methods.
+As the framework grows, I can also extract common behaviour across the chrome, firefox and iphone specs (as well as other environments) into separate classes or methods.

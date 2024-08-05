@@ -1,5 +1,4 @@
-# Pull latest image and run the container
-
+# Pull latest image from and run the container
 # docker pull mzcoder7/hacker-news-playwright-tests:latest
 # docker-compose up
 
