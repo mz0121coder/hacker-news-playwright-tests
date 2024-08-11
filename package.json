@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "npx playwright test --headed",
-		"ui": "npx playwright test --ui"
+		"test": "npx playwright test --headed --trace on",
+		"ui": "npx playwright test --ui",
+		"debug": "npx playwright test --debug"
 	},
 	"keywords": [],
 	"author": "",

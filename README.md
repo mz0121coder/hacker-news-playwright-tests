@@ -11,6 +11,7 @@
   - [Option 1 - Docker container (headless mode)](#option-1---docker-container-headless-mode)
   - [Option 2 - Playwright (headed mode)](#option-2---playwright-headed-mode)
   - [Option 3 - Playwright UI (useful for debugging)](#option-3---playwright-ui-useful-for-debugging)
+  - [Option 4 - Classic Debug Mode](#option-4---classic-debug-mode)
 - [Clean Code & Performance Optimisation](#clean-code--performance-optimisation)
 
 ## Description
@@ -45,7 +46,7 @@ I have created custom scripts to make the framework easy to use.
 
 Download or clone this repository, then go to where it has been stored on your machine.
 
-There are 3 simple ways you can run the tests.
+There are 4 simple ways you can run the tests.
 
 ### Option 1 - Docker container (headless mode):
 
@@ -102,6 +103,24 @@ npm run ui
 3. From here you can experiment with the tests and try different browsers, devices, pause, rewind etc. This is a great tool for debugging/troubleshooting.
 
    ![UI demo](/assets/Playwright-UI.png)
+
+### Option 4 - Classic Debug Mode
+
+1. From the root directory of this project, install dependencies if needed:
+
+```Shell
+npm install
+```
+
+2. Open the tests in debug mode:
+
+```Shell
+npm run debug
+```
+
+Here is an example of debug mode in mobile Safari view, where I am stepping through the code line by line:
+
+![Debug mode demo](/assets/Debug-mode.gif)
 
 ---
 
